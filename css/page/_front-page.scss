@@ -1,0 +1,156 @@
+/*---------------------------------
+
+  mv
+
+---------------------------------*/
+.mv{
+  height: 50vh;
+  background: url(../images/mv.jpg) no-repeat center center/cover;
+  position: relative;
+}
+
+.mv-txts{
+  color: #fff;
+  text-shadow: 0 0 10px #777;
+  position: absolute;
+  top: 65%;
+}
+
+.mv-ttl{
+  font-size: 24px;
+  background: $color-main;
+  padding: 0 8px;
+  margin-left: -8px;
+  width: 100%;
+}
+
+.mv-txt{
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 16px;
+}
+
+/*---------------------------------
+
+  banner
+
+---------------------------------*/
+.banner{
+  margin-top: 16px;
+}
+
+/*---------------------------------
+
+  schedule
+
+---------------------------------*/
+.schedule{
+  margin-top: 32px;
+}
+
+.schedules{
+  margin-top: 28px;
+}
+
+.schedule-items{
+  padding-top: 24px;
+
+
+  li{
+    border-bottom: 1px solid $color-sub;
+    padding-bottom: 4px;
+
+    &:not(:first-child){
+      padding-top: 16px;
+    }
+  }
+}
+
+.schedule-date{
+  background: $color-sub;
+  padding: 8px 8px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/*---------------------------------
+
+  top-about
+
+---------------------------------*/
+.top-about{
+  margin-top: 32px;
+  background: url(../images/top-about.png) no-repeat center center/cover;
+  padding: 32px 0;
+}
+
+.top-about__contents{
+  margin-top: 32px;
+}
+
+.top-about__item{
+  background: #fff;
+  padding: 16px 0;
+  margin-top: 16px; 
+}
+.top-about__ttl{
+  position: relative;
+  display: block;
+  text-align: center;
+  font-size: 16px;
+
+  &:before{
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    display: inline-block;
+    width: 40px;
+    height: 3px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    background-color: $color-main;
+    border-radius: 2px;
+  }
+}
+
+.top-about__txt{
+  text-align: center;
+  margin-top: 16px;
+}
+
+.btn{
+  display: block;
+  background: $color-main;
+  width: 40%;
+  margin: 0 auto;
+  color: #fff;
+  text-align: center;
+  padding: 8px 12px;
+  margin-top: 16px;
+}
+
+/*---------------------------------
+
+  top-feature
+
+---------------------------------*/
+.top-feature{
+  margin-top: 32px;
+  padding: 16px 0;
+
+  .btn{
+    background: $color-accent;
+  }
+}
+
+.img-area{
+  display: block;
+  margin-top: 8px;
+}
+
+.top-txt{
+  margin-top: 16px;
+  line-height: 1.75;
+  text-align: justify;
+}

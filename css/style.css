@@ -1,0 +1,524 @@
+@charset "UTF-8";
+/* A Modern CSS Reset */
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body, h1, h2, h3, h4, p, figure, blockquote, dl, dd {
+  margin: 0;
+}
+
+ul[role="list"], ol[role="list"] {
+  list-style: none;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img, picture {
+  max-width: 100%;
+  display: block;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    -webkit-animation-duration: .01ms !important;
+            animation-duration: .01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    -webkit-transition-duration: .01ms !important;
+            transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+ul, ol, dd {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+input,
+button,
+select,
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  font: inherit;
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+  display: none;
+}
+
+input[type='submit'],
+input[type='button'],
+label,
+button,
+select {
+  cursor: pointer;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+/*---------------------------------
+
+  全体共通
+
+---------------------------------*/
+body {
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  color: #333;
+}
+
+.inner {
+  max-width: 1200px;
+  padding-right: 6%;
+  padding-left: 6%;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+.bg {
+  background: #efefef;
+}
+
+/*---------------------------------
+
+  h2
+
+---------------------------------*/
+.section-ttl {
+  position: relative;
+  display: block;
+  text-align: center;
+  font-size: 20px;
+}
+
+.section-ttl:before {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  display: inline-block;
+  width: 60px;
+  height: 3px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background-color: #28B472;
+  border-radius: 2px;
+}
+
+/*---------------------------------
+
+  h3
+
+---------------------------------*/
+.section-ttl__s {
+  color: #fff;
+  font-size: 16px;
+  -webkit-box-shadow: 0px 0px 0px 5px #28B472;
+          box-shadow: 0px 0px 0px 5px #28B472;
+  border: dashed 2px white;
+  padding: 0.2em 0.5em;
+  background: #28B472;
+}
+
+.section-ttl__l {
+  font-size: 20px;
+  margin-top: 4px;
+}
+
+.section-ttl__l span {
+  color: #B528B0;
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+}
+
+/*---------------------------------
+
+  href
+
+---------------------------------*/
+.link-std {
+  text-decoration: underline;
+  display: block;
+  margin-top: 16px;
+  text-align: right;
+  color: #337ab7;
+}
+
+/*---------------------------------
+
+  header
+
+---------------------------------*/
+.header-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.header-logo {
+  width: 150px;
+  margin: 3px 0 0 5px;
+}
+
+/*---------------------------------
+
+  ハンバーガーメニュー
+
+---------------------------------*/
+.openbtn1 {
+  position: relative;
+  /*ボタン内側の基点となるためrelativeを指定*/
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+}
+
+/*ボタン内側*/
+.openbtn1 span {
+  display: inline-block;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+  /*アニメーションの設定*/
+  position: absolute;
+  left: 14px;
+  height: 3px;
+  border-radius: 2px;
+  background: #28B472;
+  width: 45%;
+}
+
+.openbtn1 span:nth-of-type(1) {
+  top: 15px;
+}
+
+.openbtn1 span:nth-of-type(2) {
+  top: 23px;
+}
+
+.openbtn1 span:nth-of-type(3) {
+  top: 31px;
+}
+
+/*activeクラスが付与されると線が回転して×に*/
+.openbtn1.active span:nth-of-type(1) {
+  top: 18px;
+  left: 18px;
+  -webkit-transform: translateY(6px) rotate(-45deg);
+          transform: translateY(6px) rotate(-45deg);
+  width: 30%;
+}
+
+.openbtn1.active span:nth-of-type(2) {
+  opacity: 0;
+  /*真ん中の線は透過*/
+}
+
+.openbtn1.active span:nth-of-type(3) {
+  top: 30px;
+  left: 18px;
+  -webkit-transform: translateY(-6px) rotate(45deg);
+          transform: translateY(-6px) rotate(45deg);
+  width: 30%;
+}
+
+/*---------------------------------
+
+  global-navigation
+
+---------------------------------*/
+.gnav {
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  z-index: 98;
+}
+
+.gnav__wrap {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  width: 100%;
+}
+
+.gnav__menu__item {
+  margin: 40px 0;
+}
+
+.gnav__menu__item a {
+  color: #fff;
+  font-size: 2em;
+  font-weight: bold;
+  padding: 40px;
+  text-decoration: none;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.gnav__menu__item a:hover {
+  color: #666;
+}
+
+.cta {
+  text-align: center;
+  background: #efefef;
+  padding: 16px 0;
+  margin-top: 24px;
+}
+
+.cta-ttl {
+  color: #28B472;
+  font-size: 16px;
+}
+
+.cta-num {
+  display: block;
+  font-size: 24px;
+  text-decoration: underline;
+  margin: 8px 0;
+}
+
+.cta-info {
+  font-size: 14px;
+}
+
+.footer {
+  padding: 32px 0 0;
+}
+
+.footer-logo {
+  display: block;
+  width: 250px;
+  margin: 0 auto;
+}
+
+.footer-items {
+  text-align: center;
+}
+
+.footer-items li {
+  margin-top: 16px;
+  font-weight: bold;
+}
+
+.copy {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #aeaeae;
+  margin: 16px 0;
+}
+
+/*---------------------------------
+
+  mv
+
+---------------------------------*/
+.mv {
+  height: 50vh;
+  background: url(../images/mv.jpg) no-repeat center center/cover;
+  position: relative;
+}
+
+.mv-txts {
+  color: #fff;
+  text-shadow: 0 0 10px #777;
+  position: absolute;
+  top: 65%;
+}
+
+.mv-ttl {
+  font-size: 24px;
+  background: #28B472;
+  padding: 0 8px;
+  margin-left: -8px;
+  width: 100%;
+}
+
+.mv-txt {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 16px;
+}
+
+/*---------------------------------
+
+  banner
+
+---------------------------------*/
+.banner {
+  margin-top: 16px;
+}
+
+/*---------------------------------
+
+  schedule
+
+---------------------------------*/
+.schedule {
+  margin-top: 32px;
+}
+
+.schedules {
+  margin-top: 28px;
+}
+
+.schedule-items {
+  padding-top: 24px;
+}
+
+.schedule-items li {
+  border-bottom: 1px solid #B52D28;
+  padding-bottom: 4px;
+}
+
+.schedule-items li:not(:first-child) {
+  padding-top: 16px;
+}
+
+.schedule-date {
+  background: #B52D28;
+  padding: 8px 8px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/*---------------------------------
+
+  top-about
+
+---------------------------------*/
+.top-about {
+  margin-top: 32px;
+  background: url(../images/top-about.png) no-repeat center center/cover;
+  padding: 32px 0;
+}
+
+.top-about__contents {
+  margin-top: 32px;
+}
+
+.top-about__item {
+  background: #fff;
+  padding: 16px 0;
+  margin-top: 16px;
+}
+
+.top-about__ttl {
+  position: relative;
+  display: block;
+  text-align: center;
+  font-size: 16px;
+}
+
+.top-about__ttl:before {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  display: inline-block;
+  width: 40px;
+  height: 3px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background-color: #28B472;
+  border-radius: 2px;
+}
+
+.top-about__txt {
+  text-align: center;
+  margin-top: 16px;
+}
+
+.btn {
+  display: block;
+  background: #28B472;
+  width: 40%;
+  margin: 0 auto;
+  color: #fff;
+  text-align: center;
+  padding: 8px 12px;
+  margin-top: 16px;
+}
+
+/*---------------------------------
+
+  top-feature
+
+---------------------------------*/
+.top-feature {
+  margin-top: 32px;
+  padding: 16px 0;
+}
+
+.top-feature .btn {
+  background: #B528B0;
+}
+
+.img-area {
+  display: block;
+  margin-top: 8px;
+}
+
+.top-txt {
+  margin-top: 16px;
+  line-height: 1.75;
+  text-align: justify;
+}
+/*# sourceMappingURL=style.css.map */
